@@ -1,7 +1,7 @@
 const PlanetBox = () => {
     return ( 
         <>
-        <h2>Planet Box</h2>
+         <h2>Planet Box</h2>
         </>
      );
 }

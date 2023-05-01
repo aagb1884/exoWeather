@@ -11,11 +11,13 @@ const PlanetBox = () => {
     }, [])
 
     const getPlanets = function(){
-
+        fetch('')
+        .then(res => res.json())
+        .then(planets = setPlanets(planets))
     }
 
     const onPlanetSelect = function(planetName) {
-        const foundPlanet = planets.find((country) => planet.name === planetName )
+        const foundPlanet = planets.find((planet) => planet.name === planetName )
         setSelectedPlanet(foundPlanet)
     }
 

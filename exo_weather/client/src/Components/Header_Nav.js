@@ -1,7 +1,11 @@
 const Header_Nav = () => {
     return (  
         <>
-        <h2>Header/Nav</h2>
+            <h1>exoWeather</h1>
+            <ul>
+                <li>Home</li>
+                <li>Planet Selector</li>
+            </ul>
         </>
     );
 }

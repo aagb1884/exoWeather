@@ -6,7 +6,4 @@ const LocationSelect = () => {
     );
 }
  
-export default LocationSelec
-<>
-<h3>Location Select</h3>
-</>t;
+export default LocationSelect

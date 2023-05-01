@@ -11,23 +11,21 @@ const PlanetBox = () => {
     }, [])
 
     const getPlanets = function(){
-        fetch('')
+        fetch('http://localhost:9000/api/planets/')
         .then(res => res.json())
-        .then(planets = setPlanets(planets))
+        .then(planets => setPlanets(planets))
     }
 
     const onPlanetSelect = function(planetName) {
-        const foundPlanet = planets.find((planet) => planet.name === planetName )
+        const foundPlanet = planets.find((planet) => planet.planet === planetName )
         setSelectedPlanet(foundPlanet)
     }
-
-
 
     return ( 
         <>
          <h2>Planet Box</h2>
-         <UniquePlanet />
-         <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect}/>
+         <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
+         <UniquePlanet /> 
         </>
      );
 }

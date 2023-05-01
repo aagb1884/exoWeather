@@ -4,13 +4,17 @@
 1. `Git clone` into the directory of your choice
 2. make sure you do an `npm install` in each of the `server` and `client` directory
 3. in the server directory, make sure you do the following:
-  > npm install express 
-  > npm install mongodb 
-  > npm install cors
-  > npm install --save-dev nodemon
+  >npm install express 
+  >
+  >npm install mongodb 
+  >
+  >npm install cors
+  >
+  >npm install --save-dev nodemon
 4. you should then be able to run both the server and the client in separate tabs on the terminal:
-  > npm run server:dev
-  > npm start
+  >npm run server:dev
+  >
+  >npm start
 
 ### Thereafter
 1. do a `git pull` to ensure you've got the latest version

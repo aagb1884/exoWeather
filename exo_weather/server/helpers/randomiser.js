@@ -3,8 +3,9 @@ const Randomiser = {
 
   
   getRandomVal(min, max) {
-    // return Math.floor(Math.random() * max);
-    return Math.random() * (max - min) + min;
+    const result = Math.random() * (max - min) + min;
+    console.log (`getRandomVal: ${result}`)
+    return result;
   },  
   
   populateValues(min, max) {
@@ -12,6 +13,7 @@ const Randomiser = {
     for (let i = 0; i <= 18; i++){
       validArray.push(getRandomVal(min, max))
     }
+    console.log(`populateValues: ${validArray}`)
     return validArray
   }
   

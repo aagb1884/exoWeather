@@ -3,8 +3,11 @@
   text-align: center;
 }
 
-
-
 .App-link {
   color: #61dafb;
+}
+
+@font-face {
+  font-family: 'aquire-font';
+  src: url('./fonts/aquire-font/Aquire-BW0ox.otf') format('opentype');
 }

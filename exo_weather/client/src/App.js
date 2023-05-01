@@ -1,12 +1,16 @@
 import './App.css';
-import Header_Nav from './Components/Header_Nav';
+import HeaderNav from './Components/HeaderNav';
 import Container from './Containers/Container';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+<<<<<<< HEAD
+       <HeaderNav/>
+=======
        <Header_Nav />
+>>>>>>> main
        <Container />
       </header>
     </div>

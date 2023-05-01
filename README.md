@@ -17,9 +17,9 @@
 2. if necessary, run `npm run seeds` to populate the database
 3. `git checkout -b feature/<name or ticket number>` or fix/<name or ticket number>
 4. gaa / git commit -m (do this frequently)
-5. when you're done with your code/feature, - i.e. before doing step 4, do a further pull main, then go back to your branch and do a `git merge main` to check for any conflicts
-6. git push origin <branchname>
+5. when you're done with your code/feature, - i.e. before doing step 6, do a further pull main, then go back to your branch and do a `git merge main` to check for any conflicts
+6. `git push origin <branchname>`
 7. Open a pull request on github
 8. get someone else to confirm merge on github
 
-Git branch - will show you all the available branches. The one you're on is in green
+`git branch` - will show you all the available branches. The one you're on is in green

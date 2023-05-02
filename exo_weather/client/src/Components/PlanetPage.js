@@ -5,14 +5,14 @@ const PlanetPage = () => {
     return ( 
         <div classname="planet-page">
 
-        <h2>{planetName}</h2>
+        <h2></h2>
             <ul>
                 <li>
                     Air Temperature:
                         <ul>
-                            <li>Average: {data[0].AT.avg}</li>
-                            <li>Min: {data[0].AT.min}</li>
-                            <li>Max:{data[0].AT.max}</li>
+                            <li>Average: </li>
+                            <li>Min: </li>
+                            <li>Max:</li>
                         </ul>
                 </li>
                 <li>

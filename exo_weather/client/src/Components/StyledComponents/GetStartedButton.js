@@ -27,7 +27,7 @@ const ButtonLink = styled(ButtonWrapper)`
   cursor: pointer;
 
   &:hover {
-    background-color: #181b1c;
+    background-color: #f8ab07;
   }
 `;
 

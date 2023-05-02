@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
-import GetStartedButton from './GetStartedButton';
-
+import GetStartedButton from './StyledComponents/GetStartedButton';
+import StyledDropDown from './StyledComponents/StyledDropDown';
 const HomePage = () => {
   return (
     <HomePageWrapper>
@@ -8,15 +8,22 @@ const HomePage = () => {
       <GetStartedButtonWrapper>
         <GetStartedButton />
       </GetStartedButtonWrapper>
+      <StyledDropDown />
     </HomePageWrapper>
   );
 };
 
 const HomePageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+     display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 75vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 0%;
+    align-content: center;
 `;
 
 const fadeInOut = keyframes`

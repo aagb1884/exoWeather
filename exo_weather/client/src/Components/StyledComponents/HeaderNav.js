@@ -7,10 +7,10 @@ const HeaderNav = () => {
       <Title>exoWeather</Title>
       <Nav>
         <NavItem>
-          <NavButton>burger option menu
+          <NavButton>burger
             <DropdownList>
               <DropdownItem><DropdownLink href="/">Home</DropdownLink></DropdownItem>
-              <DropdownItem><DropdownLink href="/planets">All Planets</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink href="/planets">Compare Planets</DropdownLink></DropdownItem>
               <DropdownItem><DropdownLink href="/about">About</DropdownLink></DropdownItem>
             </DropdownList>
           </NavButton>

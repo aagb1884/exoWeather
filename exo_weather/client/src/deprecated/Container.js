@@ -1,4 +1,4 @@
-import PlanetBox from "../Components/PlanetBox";
+import PlanetBox from "../Containers/PlanetBox";
 
 const Container = () => {
    

@@ -3066,6 +3066,7 @@ db.earth.insertOne(
 db.combined.insertMany([
   {planet: "Mars",
   location: "Insight",
+  image: "mars.png",
   data: [
     {
       AT: { avg: -71.233, min: -101.024, max: -27.149 },
@@ -3104,7 +3105,8 @@ db.combined.insertMany([
 },
 
 {planet: "Earth",
- location: "Edinburgh",
+location: "Edinburgh",
+image: "earth.png",
  data: [
   {
     AT: { avg: 11.233, min: -1.024, max: 15.32 },

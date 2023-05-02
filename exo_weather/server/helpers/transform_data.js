@@ -1,4 +1,4 @@
-
+const ObjectId = require('mongodb').ObjectId;
 const transformData = function (marsCollection, earthCollection, combined) {
 
   // const date = new Date();
@@ -8,17 +8,18 @@ const transformData = function (marsCollection, earthCollection, combined) {
   // const year = date.getFullYear();
   // const earthDate = year && '-' &&
 
- const newMarsObject =  marsCollection
+  const newMarsObject =  marsCollection
     .find()
     .toArray()
-    .then((doc) => res.json(doc))
+    // .then(doc => {console.log(doc)})
     .then(data => {
+      console.log(data)
       const {
         _id,
         sol_keys,
         ...solData
-      } = data
-      return Object.entries(solData).map(([sol, data]) => {
+      } = data[0]
+      temp = Object.entries(solData).map(([sol, data]) => {
         return{
           AT: {
             avg: data.AT.av,
@@ -42,85 +43,89 @@ const transformData = function (marsCollection, earthCollection, combined) {
           }
         }
       })
-    }) = data
-    .catch((err) => {
-      console.error(err);
-      res.status(500);
-      res.json({ status: 500, error: err });
-    });
-
-    combined
-      .insertOne(newMarsObject)
+      console.log(`print out temp: ${temp[0].AT.avg}`)
+    })
+    // .catch((err) => {
+    //   console.error(err);
+    //   res.status(500);
+    //   res.json({ status: 500, error: err });
+    // });
+    // console.log(`mars: ${newMarsObject.sol_keys}`)
+    // combined
+    //   .insertOne(newMarsObject)
 
     const newEarthObject =  earthCollection
     .find()
     .toArray()
-    .then((doc) => res.json(doc))
-    .then(data => {
-      const {
-        _id,
-        location,
-        current,
-        ...forecast
-      } = data
+    .then((doc) => {console.log(doc)})
+      // res.json(doc))
+  //   .then(data => {
+  //     const {
+  //       _id,
+  //       location,
+  //       current,
+  //       ...forecast
+  //     } = data
     
-    const temp =  Object.entries(forecast.forecastday).map(([day, data]) => {
-        return{
-          AT: {
-            avg: data.day.avgtemp_c,
-            min: data.day.mintemp_c,
-            max: data.day.maxtemp_c
-          },
-          WS: {
-            avg: data.current.wind_kph, //should really iterate through hourly
-            min: data.current.wind_kph,
-            max: data.current.gust_kph
-            },
-          SUN: {
-            rise: data.astro.sunrise,
-            set: data.astro.sunset
-          }
-        }
-      })
-          
-    const fullArray = {
-      ...temp,
-      PRE: {
-        avg: data.current.pressure_mb,
-        min: null,
-        max: null
-      },
-      WD: {
-        avg: data.current.wind_dir,
-        min: null, //should iterate
-        max: null, 
-      },
-      HUM: {
-        avg: data.current.humidity,
-        min: null,
-        max: null
-      },
-      UV: {
-        avg: data.current.uv,
-        min: null,
-        max: null              
-      },
-      VIS: {
-        avg: data.current.vis_km,
-        min: null,
-        max: null
-      }
-    }
-    }) = data
-    .catch((err) => {
-      console.error(err);
-      res.status(500);
-      res.json({ status: 500, error: err });
-    });
+  //   const temp =  Object.entries(forecast.forecastday).map(([day, data]) => {
+  //       return{
+  //         AT: {
+  //           avg: data.day.avgtemp_c,
+  //           min: data.day.mintemp_c,
+  //           max: data.day.maxtemp_c
+  //         },
+  //         WS: {
+  //           avg: data.current.wind_kph, //should really iterate through hourly
+  //           min: data.current.wind_kph,
+  //           max: data.current.gust_kph
+  //           },
+  //         SUN: {
+  //           rise: data.astro.sunrise,
+  //           set: data.astro.sunset
+  //         }
+  //       }
+  //     })
+    
+  //   console.log(`earth: ${temp}`)
+      
+  //   const fullArray = {
+  //     ...temp,
+  //     PRE: {
+  //       avg: data.current.pressure_mb,
+  //       min: null,
+  //       max: null
+  //     },
+  //     WD: {
+  //       avg: data.current.wind_dir,
+  //       min: null, //should iterate
+  //       max: null, 
+  //     },
+  //     HUM: {
+  //       avg: data.current.humidity,
+  //       min: null,
+  //       max: null
+  //     },
+  //     UV: {
+  //       avg: data.current.uv,
+  //       min: null,
+  //       max: null              
+  //     },
+  //     VIS: {
+  //       avg: data.current.vis_km,
+  //       min: null,
+  //       max: null
+  //     }
+  //   }
+  //   }) = data
+  //   .catch((err) => {
+  //     console.error(err);
+  //     res.status(500);
+  //     res.json({ status: 500, error: err });
+  //   });
 
-    combined
-      .insertOne(newEarthObject)
-
+  // console.log(`Full: ${fullArray}`)
+  //   combined
+  //     .insertOne(newEarthObject)
 }
 
 module.exports = transformData;

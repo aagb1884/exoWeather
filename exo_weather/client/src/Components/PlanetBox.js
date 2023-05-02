@@ -22,11 +22,12 @@ const PlanetBox = () => {
     }
 
     return ( 
-        <>
+        <div classname="planet-box">
          <h2>Planet Box</h2>
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
          <UniquePlanet /> 
-        </>
+        </div>
+
      );
 }
  

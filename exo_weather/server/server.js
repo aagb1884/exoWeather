@@ -1,3 +1,4 @@
+// const transformData = require('./helpers/transform_data.js');
 const express = require('express');
 const app = express();
 
@@ -7,6 +8,7 @@ app.use(express.json());
 
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
+const transformData = require('./helpers/transform_data.js');
 
 MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
   .then((client) => {
@@ -14,10 +16,12 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const marsCollection = db.collection('mars');
     const earthCollection = db.collection('earth');
     const combined = db.collection('combined');
+    transformData(marsCollection, earthCollection, combined)
     const planetRouter = createRouter(combined);
     app.use('/api/planets', planetRouter);
   })
   .catch(console.err);
+
 
 app.listen(9000, function () {
   console.log(`Listening on port ${ this.address().port }`);

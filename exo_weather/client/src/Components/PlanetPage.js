@@ -97,10 +97,7 @@ const PlanetPage = () => {
                         </ul>
                 </li>
                 <li>
-                    Sunrise:
-                </li>
-                <li>
-                    Sunset:
+                    Sunrise/Sunset:
                 </li>
                 <li>
                     Humidity:

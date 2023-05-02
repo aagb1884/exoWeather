@@ -21,51 +21,36 @@ const transformData = function (marsCollection, earthCollection, combined) {
         ...solData
       } = data[0]
     temp =  Object.entries(solData).map(([sol, data]) => {
-      return{
-        AT: {
+      return[
+        {AT: {
           avg: data.AT.av,
           min: data.AT.mn,
           max: data.AT.mx
-        },
-        PRE: {
+        }},
+        {PRE: {
           avg: data.PRE.av,
           min: data.PRE.mn,
           max: data.PRE.mx
-        },
-        WS: {
+        }},
+        {WS: {
           avg: data.HWS.av,
           min: data.HWS.mn,
           // max: data.HWS.m         x
-        },
-        WD: {
+        }},
+        {WD: {
           avg: data.WD.most_common.compass_point,
           min: null,
           max: null
-        },
-        DATES: {
+        }},
+        {DATES: {
           utc: data.First_UTC,
           sol: sol
-        },
-        SUN: {
+        }},
+        {SUN: {
           rise: "04:03.23",
           set: "21:23.43"
-        },
-        HUM: {
-          avg: null,
-          min: null,
-          max: null
-        },
-        VIS: {
-          avg: null,
-          min: null,
-          max: null
-        },
-        UV: {
-          avg: null,
-          min: null,
-          max: null
-        }
-      }
+        }}
+      ]
     })
     return temp
   })
@@ -79,6 +64,7 @@ const transformData = function (marsCollection, earthCollection, combined) {
     return {
       planet: "Mars",
       location: "Insight",
+      image: "mars.png",
       data}
   })
   .then(fullObj => {
@@ -101,45 +87,45 @@ const transformData = function (marsCollection, earthCollection, combined) {
       } = data[0]
       // console.log(forecast.forecast.forecastday[0])
     const temp =  forecast.forecast.forecastday.map((data) => {
-      return{
-        AT: {
+      return[
+        {AT: {
           avg: data.day.avgtemp_c,
           min: data.day.mintemp_c,
           max: data.day.maxtemp_c
-        },
-        WS: {
+        }},
+        {WS: {
           avg: data.day.wind_kph, //should really iterate through hourly
           min: data.day.wind_kph,
           max: data.day.gust_kph
-          },
-        SUN: {
+          }},
+        {SUN: {
           rise: data.astro.sunrise,
           set: data.astro.sunset
-        },
-        DATES: {
+        }},
+        {DATES: {
           utc: data.date,
           sol: null
-        },
-        SUN: {
+        }},
+        {SUN: {
           rise: data.astro.sunrise,
           set: data.astro.sunset
-        },
-        HUM: {
+        }},
+        {HUM: {
           avg: data.day.avghumidity,
           min: null,
           max: null
-        },
-        VIS: {
+        }},
+        {VIS: {
           avg: data.day.avgvis_km,
           min: null,
           max: null
-        },
-        UV: {
+        }},
+        {UV: {
           avg: data.day.uv,
           min: null,
           max: null
-        }
-      }
+        }}
+      ]
     })
     return temp
     // console.log(temp)
@@ -155,6 +141,7 @@ const transformData = function (marsCollection, earthCollection, combined) {
       return {
         planet: "Earth",
         location: "Edinburgh",
+        image: "earth.png",
         data
       }
       //   const fullArray = {

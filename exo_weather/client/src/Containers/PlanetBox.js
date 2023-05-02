@@ -3,39 +3,31 @@ import PlanetSelect from "../Components/PlanetSelect";
 import UniquePlanet from "../Components/UniquePlanet";
 import React, { useState, useEffect } from 'react';
 
-const PlanetBox = () => {
-    const [planets, setPlanets] = useState([]);
+const PlanetBox = ({planet, planets}) => {
+   
     const [selectedPlanet, setSelectedPlanet] = useState(null);
-    const [selectedPlanet2, setSelectedPlanet2] = useState(null);
+    // const [selectedPlanet2, setSelectedPlanet2] = useState(null);
 
-    useEffect(() => {
-        getPlanets();
-    }, [])
-
-    const getPlanets = function(){
-        fetch('http://localhost:9000/api/planets/')
-        .then(res => res.json())
-        .then(planets => setPlanets(planets))
-    }
 
     const onPlanetSelect = function(planetName) {
         const foundPlanet = planets.find((planet) => planet.planet === planetName )
         setSelectedPlanet(foundPlanet)
+        console.log(`SelectedPlanet ${foundPlanet.planet}`)
     }
 
-    const onPlanetSelect2 = function(planetName) {
-        const foundPlanet = planets.find((planet) => planet.planet === planetName )
-        setSelectedPlanet2(foundPlanet)
-    }
+    // const onPlanetSelect2 = function(planetName) {
+    //     const foundPlanet = planets.find((planet) => planet.planet === planetName )
+    //     setSelectedPlanet2(foundPlanet)
+    // }
 
     return ( 
-        <div classname="planet-box">
+        <div className="planet-box">
          <h2>Planet Box</h2>
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
          { selectedPlanet ? <UniquePlanet planet={selectedPlanet}/> : null }
-         <br />
+         {/* <br />
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect2} />
-         { selectedPlanet2 ? <UniquePlanet planet={selectedPlanet2}/> : null}
+         { selectedPlanet2 ? <UniquePlanet planet={selectedPlanet2}/> : null} */}
         </div>
 
      );

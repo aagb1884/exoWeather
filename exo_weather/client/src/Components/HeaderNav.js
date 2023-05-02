@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 const HeaderNav = () => {
   return (
@@ -8,9 +9,9 @@ const HeaderNav = () => {
         <NavItem>
           <NavButton>burger option menu
             <DropdownList>
-              <DropdownItem><DropdownLink href="#">Home</DropdownLink></DropdownItem>
-              <DropdownItem><DropdownLink href="#">All Planets</DropdownLink></DropdownItem>
-              <DropdownItem><DropdownLink href="#">About</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink href="/">Home</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink href="/planets">All Planets</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink href="/about">About</DropdownLink></DropdownItem>
             </DropdownList>
           </NavButton>
         </NavItem>

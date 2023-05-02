@@ -8,56 +8,65 @@ const transformData = function (marsCollection, earthCollection, combined) {
   // const year = date.getFullYear();
   // const earthDate = year && '-' &&
 
+  combined.deleteMany({"planet": "Mars"})
   const newMarsObject =  marsCollection
     .find()
     .toArray()
-    // .then(doc => {console.log(doc)})
     .then(data => {
-      console.log(data)
+      console.log(data[0])
       const {
         _id,
         sol_keys,
         ...solData
       } = data[0]
-      temp = Object.entries(solData).map(([sol, data]) => {
-        return{
-          AT: {
-            avg: data.AT.av,
-            min: data.AT.mn,
-            max: data.AT.max
-          },
-          PRE: {
-            avg: data.PRE.av,
-            min: data.PRE.mn,
-            max: data.PRE.max
-          },
-          WS: {
-            avg: data.HWS.av,
-            min: data.HWS.mn,
-            max: data.HWS.max
-          },
-          WD: {
-            avg: data.WD.most_common.compass_point,
-            min: null,
-            max: null
-          }
+    temp =  Object.entries(solData).map(([sol, data]) => {
+      return{
+        AT: {
+          avg: data.AT.av,
+          min: data.AT.mn,
+          max: data.AT.max
+        },
+        PRE: {
+          avg: data.PRE.av,
+          min: data.PRE.mn,
+          max: data.PRE.max
+        },
+        WS: {
+          avg: data.HWS.av,
+          min: data.HWS.mn,
+          max: data.HWS.max
+        },
+        WD: {
+          avg: data.WD.most_common.compass_point,
+          min: null,
+          max: null
         }
-      })
-      console.log(`print out temp: ${temp[0].AT.avg}`)
+      }
     })
-    // .catch((err) => {
-    //   console.error(err);
-    //   res.status(500);
-    //   res.json({ status: 500, error: err });
-    // });
-    // console.log(`mars: ${newMarsObject.sol_keys}`)
-    // combined
-    //   .insertOne(newMarsObject)
+    return temp
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500);
+    res.json({ status: 500, error: err });
+  })
+  .then(data => {
+    console.log(data)
+    return {
+      planet: "Mars",
+      location: "Insight",
+      data}
+  })
+  .then(fullObj => {
+    console.log(`mars: ${fullObj}`)
+    combined
+    .insertOne(fullObj)
+  })
 
-    const newEarthObject =  earthCollection
-    .find()
-    .toArray()
-    .then((doc) => {console.log(doc)})
+    // const newEarthObject =  earthCollection
+    // .find()
+    // .toArray()
+    // .then((doc) => {console.log(doc)})
       // res.json(doc))
   //   .then(data => {
   //     const {

@@ -1,3 +1,4 @@
+import PlanetPage from "./PlanetPage";
 import PlanetSelect from "./PlanetSelect";
 import UniquePlanet from "./UniquePlanet";
 import React, { useState, useEffect } from 'react';
@@ -24,6 +25,9 @@ const PlanetBox = () => {
     return ( 
         <div classname="planet-box">
          <h2>Planet Box</h2>
+         <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
+         <UniquePlanet /> 
+         <br />
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
          <UniquePlanet /> 
         </div>

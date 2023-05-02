@@ -24,20 +24,43 @@ const transformData = function (marsCollection, earthCollection, combined) {
         AT: {
           avg: data.AT.av,
           min: data.AT.mn,
-          max: data.AT.max
+          max: data.AT.mx
         },
         PRE: {
           avg: data.PRE.av,
           min: data.PRE.mn,
-          max: data.PRE.max
+          max: data.PRE.mx
         },
         WS: {
           avg: data.HWS.av,
           min: data.HWS.mn,
-          max: data.HWS.max
+          max: data.HWS.mx
         },
         WD: {
           avg: data.WD.most_common.compass_point,
+          min: null,
+          max: null
+        },
+        DATES: {
+          utc: data.First_UTC,
+          sol: sol
+        },
+        SUN: {
+          rise: "04:03.23",
+          set: "21:23.43"
+        },
+        HUM: {
+          avg: null,
+          min: null,
+          max: null
+        },
+        VIS: {
+          avg: null,
+          min: null,
+          max: null
+        },
+        UV: {
+          avg: null,
           min: null,
           max: null
         }
@@ -63,40 +86,41 @@ const transformData = function (marsCollection, earthCollection, combined) {
     .insertOne(fullObj)
   })
 
-    // const newEarthObject =  earthCollection
-    // .find()
-    // .toArray()
+    const newEarthObject =  earthCollection
+    .find()
+    .toArray()
     // .then((doc) => {console.log(doc)})
-      // res.json(doc))
-  //   .then(data => {
-  //     const {
-  //       _id,
-  //       location,
-  //       current,
-  //       ...forecast
-  //     } = data
-    
-  //   const temp =  Object.entries(forecast.forecastday).map(([day, data]) => {
-  //       return{
-  //         AT: {
-  //           avg: data.day.avgtemp_c,
-  //           min: data.day.mintemp_c,
-  //           max: data.day.maxtemp_c
-  //         },
-  //         WS: {
-  //           avg: data.current.wind_kph, //should really iterate through hourly
-  //           min: data.current.wind_kph,
-  //           max: data.current.gust_kph
-  //           },
-  //         SUN: {
-  //           rise: data.astro.sunrise,
-  //           set: data.astro.sunset
-  //         }
-  //       }
-  //     })
-    
-  //   console.log(`earth: ${temp}`)
-      
+    .then(data => {
+      console.log(data[0])
+      const {
+        _id,
+        location,
+        current,
+        ...forecast
+      } = data[0]
+      console.log(forecast)
+    // const temp =  Object.entries(forecast).map(([data]) => {
+    //     return{
+    //       AT: {
+    //         avg: data.day.avgtemp_c,
+    //         min: data.day.mintemp_c,
+    //         max: data.day.maxtemp_c
+    //       },
+    //       WS: {
+    //         avg: data.current.wind_kph, //should really iterate through hourly
+    //         min: data.current.wind_kph,
+    //         max: data.current.gust_kph
+    //         },
+    //       SUN: {
+    //         rise: data.astro.sunrise,
+    //         set: data.astro.sunset
+    //       }
+    //     }
+    //   })
+    //   return temp
+    //   console.log(temp)
+    // })
+    })
   //   const fullArray = {
   //     ...temp,
   //     PRE: {

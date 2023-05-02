@@ -3067,90 +3067,70 @@ db.combined.insertMany([
   {planet: "Mars",
   location: "Insight",
   data: [
-    {AT: {
-      avg: -68.4,
-      min: -102.334,
-      max: -10.321
-    }},
-    {PRE: {
-      avg: 1021,
-      min: 1000,
-      max: 1500,
-    }},
-    {WS: {
-      avg: 15.3,
-      min: 10.4,
-      max: 20.3
-    }},
-    {WD: {
-      avg: "SSE",
-      min: "E",
-      max: "S"
-    }},
-    {SUN: {
-      rise: "04:32.32",
-      set: "21:21.35"
-    }},
-    {HUM: {
-      avg: null,
-      min: null,
-      max: null
-    }},
-    {UV: {
-      avg: null,
-      min: null,
-      max: null
-    }},
-    {VIS: {
-      avg: null,
-      min: null,
-      max: null
-    }}
+    {
+      AT: { avg: -71.233, min: -101.024, max: -27.149 },
+      PRE: { avg: 761.006, min: 742.1498, max: 780.3891 },
+      WS: { avg: 4.35, min: 0.156, max: 17.617 },
+      WD: { avg: 'SSW', min: null, max: null },
+      DATES: { utc: '2019-08-19T08:03:59Z', sol: '1219' },
+      SUN: { rise: '04:03.23', set: '21:23.43' },
+      HUM: { avg: null, min: null, max: null },
+      VIS: { avg: null, min: null, max: null },
+      UV: { avg: null, min: null, max: null }
+    },
+    {
+      AT: { avg: -61.233, min: -98.024, max: -29.149 },
+      PRE: { avg: 749.006, min: 732.1498, max: 770.3891 },
+      WS: { avg: 3.35, min: 0.356, max: 17.817 },
+      WD: { avg: 'SSW', min: null, max: null },
+      DATES: { utc: '2019-08-19T08:03:59Z', sol: '1220' },
+      SUN: { rise: '04:03.23', set: '21:23.43' },
+      HUM: { avg: null, min: null, max: null },
+      VIS: { avg: null, min: null, max: null },
+      UV: { avg: null, min: null, max: null }
+    },
+    {
+      AT: { avg: -69.233, min: -100.067, max: -28.983 },
+      PRE: { avg: 759.016, min: 745.1813, max: 778.3311 },
+      WS: { avg: 4.09, min: 0.134, max: 16.679 },
+      WD: { avg: 'SSW', min: null, max: null },
+      DATES: { utc: '2019-08-19T08:03:59Z', sol: '1221' },
+      SUN: { rise: '04:03.23', set: '21:23.43' },
+      HUM: { avg: null, min: null, max: null },
+      VIS: { avg: null, min: null, max: null },
+      UV: { avg: null, min: null, max: null }
+    }
   ] 
 },
 
 {planet: "Earth",
  location: "Edinburgh",
-  data: [
-    {AT: {
-      avg: 18.4,
-      min: 10.334,
-      max: 25.321
-    }},
-    {PRE: {
-      avg: 921,
-      min: 800,
-      max: 1100,
-    }},
-    {WS: {
-      avg: 15.3,
-      min: 10.4,
-      max: 20.3
-    }},
-    {WD: {
-      avg: "SSE",
-      min: "E",
-      max: "S"
-    }},
-    {SUN: {
-      rise: "06:32.32",
-      set: "21:15.35"
-    }},
-    {HUM: {
-      avg: .5,
-      min: .45,
-      max: .51
-    }},
-    {UV: {
-      avg: 3,
-      min: 1,
-      max: 4
-    }},
-    {VIS: {
-      avg: 15,
-      min: 14,
-      max: 16
-    }} ] 
+ data: [
+  {
+    AT: { avg: 11.233, min: -1.024, max: 15.32 },
+    PRE: { avg: 861.006, min: 742.1498, max: 1113 },
+    WS: { avg: 14.35, min: 10.156, max: 20 },
+    WD: { avg: 'SSW', min: 'S', max: 'SW' },
+    DATES: { utc: '2019-08-19T08:03:59Z', sol: '1219' },
+    SUN: { rise: '04:03.23', set: '21:23.43' }
+  },
+  {
+    AT: { avg: -61.233, min: -98.024, max: 0 },
+    PRE: { avg: 749.006, min: 732.1498, max: 0 },
+    WS: { avg: 3.35, min: 0.356, max: 0 },
+    WD: { avg: 'SSW', min: null, max: null },
+    DATES: { utc: '2019-08-19T08:03:59Z', sol: '1220' },
+    SUN: { rise: '04:03.23', set: '21:23.43' }
+  },
+  {
+    AT: { avg: -69.233, min: -100.067, max: 0 },
+    PRE: { avg: 759.016, min: 745.1813, max: 0 },
+    WS: { avg: 4.09, min: 0.134, max: 0 },
+    WD: { avg: 'SSW', min: null, max: null },
+    DATES: { utc: '2019-08-19T08:03:59Z', sol: '1221' },
+    SUN: { rise: '04:03.23', set: '21:23.43' }
+  }
+] 
 }
 
 ]);

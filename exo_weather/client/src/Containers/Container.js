@@ -6,7 +6,8 @@ const Container = () => {
 
     return ( 
         <>
-        < PlanetBox />
+        <h2>Container</h2>
+        <PlanetBox/>
         </>
      );
 }

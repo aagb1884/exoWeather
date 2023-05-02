@@ -1,16 +1,16 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const TitleBar = () => {
+const HeaderNav = () => {
   return (
     <Header>
       <Title>exoWeather</Title>
       <Nav>
         <NavItem>
-          <NavButton>Options
+          <NavButton>burger option menu
             <DropdownList>
               <DropdownItem><DropdownLink href="#">Home</DropdownLink></DropdownItem>
               <DropdownItem><DropdownLink href="#">All Planets</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink href="#">About</DropdownLink></DropdownItem>
             </DropdownList>
           </NavButton>
         </NavItem>
@@ -23,9 +23,9 @@ const Header = styled.header`
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #081d3d;
+  background-image: url("./images/starbackground.jpeg");
   color: #cf460e;
-  border: solid 5px;
+  border: solid 2.5px;
   border-radius: 100px;
 `;
 
@@ -52,10 +52,10 @@ const NavItem = styled.li`
 
 const NavButton = styled.button`
   color: white;
-  background-color: #081d3d;
+  background-color: #181b1c;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'aquire-font', sans-serif;
 `;
 
@@ -67,7 +67,7 @@ const DropdownList = styled.ul`
   list-style: none;
   padding: 10px;
   margin: 0;
-  background-color: #081d3d;
+  background-color: #181b1c;
   ${NavButton}:hover & {
     display: block;
   }
@@ -82,7 +82,8 @@ const DropdownLink = styled.a`
   padding: 10px;
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
+  justify-content: center;
 `;
 
-export default TitleBar;
+export default HeaderNav;

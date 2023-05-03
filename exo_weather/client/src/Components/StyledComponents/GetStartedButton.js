@@ -18,7 +18,7 @@ const ButtonWrapper = styled.div`
 
 const ButtonLink = styled(ButtonWrapper)`
   padding: 1rem 2rem;
-  background-image: url("./images/starbackground.jpeg");
+  background-color: transparent;
   color: white;
   text-decoration: none;
   justify-content: center;

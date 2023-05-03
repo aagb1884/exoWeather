@@ -8,22 +8,23 @@ const HomePage = () => {
       <GetStartedButtonWrapper>
         <GetStartedButton />
       </GetStartedButtonWrapper>
-      <StyledDropDown />
     </HomePageWrapper>
   );
 };
 
 const HomePageWrapper = styled.div`
-     display: flex;
+    display: flex;
     -webkit-box-pack: center;
-    justify-content: center;
+    place-content: center;
     -webkit-box-align: center;
     align-items: center;
     height: 75vh;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     padding-top: 0%;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-content: center;
+    justify-content: center;
 `;
 
 const fadeInOut = keyframes`

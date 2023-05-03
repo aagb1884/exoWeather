@@ -14,7 +14,7 @@ const StyledWidget = ({info}) => {
 
 const widgetItems = spread.map((key) => {
    for (let valueKey in key){
-    return <StyledWidgetWeatherData>~{valueKey} - {key[valueKey]}</StyledWidgetWeatherData>
+    return <StyledWidgetWeatherData>~{valueKey}: {key[valueKey]}</StyledWidgetWeatherData>
   }
 })
 
@@ -47,19 +47,19 @@ const StyledWidgetWrapper = styled.div`
     border-width: 5px;
     border-radius: 5%;
     padding: 1rem;
-    margin: 1 rem;
+    margin: 5px;
    	text-align: center;
 `
 
 const StyledWidgetWeatherType = styled.h2`
     font: robotto;
-    font-size: 16px;
+    font-size: 25px;
     color: black;
 `
 
 const StyledWidgetWeatherData = styled.h3`
 font: robotto;
-    font-size: 10px;
+    font-size: 18px;
     color: black;
 `
 export default StyledWidget;

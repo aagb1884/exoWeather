@@ -36,6 +36,7 @@ justify-content: space-between;
 padding-top: 15px;
 padding-left: 1%;
 padding-right: 1%;
+margin-top: 1rem;
 
 > * {
     flex: 1;

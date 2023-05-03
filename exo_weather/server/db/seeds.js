@@ -71,7 +71,7 @@ db.mars.insertOne(
     "1221": {"AT": { "av": -69.233, "ct": 326642, "mn": -100.067, "mx": -28.983 }, 
     "HWS": { "av": 4.09, "ct": 154291, "mn": 0.134, "mx": 16.679 },
     "PRE": { "av": 759.016, "ct": 163013, "mn": 745.1813, "mx": 778.3311 }, 
-    "WD": {   if {planet.planet} === planetName && {planet.location} === 
+    "WD": {
       "most_common": { "compass_degrees": 202.5, "compass_point": "SSW", 
               "compass_right": -0.382683432365, "compass_up": -0.923879532511, "ct": 28551 }, 
     },
@@ -3069,28 +3069,58 @@ db.combined.insertMany([
   image: "mars.png",
   data: [
     [
-      {AT: { avg: -71.233, min: -101.024, max: -27.149 }},
-      {PRE: { avg: 761.006, min: 742.1498, max: 780.3891 }},
-      {WS: { avg: 4.35, min: 0.156, max: 17.617 }},
-      {WD: { avg: 'SSW', min: null, max: null }},
-      {DATES: { utc: '2019-08-19T08:03:59Z', sol: '1219' }},
-      {SUN: { rise: '04:03.23', set: '21:23.43' }}
+      {Temperature: { avg: -71.233, min: -101.024, max: -27.149 }},
+      {Pressure: { avg: 761.006, min: 742.1498, max: 780.3891 }},
+      {WindSpeed: { avg: 4.35, min: 0.156, max: 17.617 }},
+      {WindDirection: { avg: 'SSW', min: null, max: null }},
+      {Dates: { utc: '2023-05-01T04:05:34Z', sol: '1317' }},
+      {Astro: { rise: '04:03.23', set: '21:23.43' }}
     ],
     [
-      {AT: { avg: -61.233, min: -98.024, max: -29.149 }},
-      {PRE: { avg: 749.006, min: 732.1498, max: 770.3891 }},
-      {WS: { avg: 3.35, min: 0.356, max: 17.817 }},
-      {WD: { avg: 'SSW', min: null, max: null }},
-      {DATES: { utc: '2019-08-19T08:03:59Z', sol: '1220' }},
-      {SUN: { rise: '04:03.23', set: '21:23.43' }}
+      {Temperature: { avg: -61.233, min: -98.024, max: -29.149 }},
+      {Pressure: { avg: 749.006, min: 732.1498, max: 770.3891 }},
+      {WindSpeed: { avg: 3.35, min: 0.356, max: 17.817 }},
+      {WindDirection: { avg: 'SSW', min: null, max: null }},
+      {Dates: { utc: '2023-05-02T04:01:23Z', sol: '1318' }},
+      {Astro: { rise: '04:03.23', set: '21:23.43' }}
     ],
     [
-      {AT: { avg: -69.233, min: -100.067, max: -28.983 }},
-      {PRE: { avg: 759.016, min: 745.1813, max: 778.3311 }},
-      {WS: { avg: 4.09, min: 0.134, max: 16.679 }},
-      {WD: { avg: 'SSW', min: null, max: null }},
-      {DATES: { utc: '2019-08-19T08:03:59Z', sol: '1221' }},
-      {SUN: { rise: '04:03.23', set: '21:23.43' }}
+      {Temperature: { avg: -69.233, min: -100.067, max: -28.983 }},
+      {Pressure: { avg: 759.016, min: 745.1813, max: 778.3311 }},
+      {WindSpeed: { avg: 4.09, min: 0.134, max: 16.679 }},
+      {WindDirection: { avg: 'SSW', min: null, max: null }},
+      {Dates: { utc: '2023-05-03T04:06:15Z', sol: '1319' }},
+      {Astro: { rise: '04:03.23', set: '21:23.43' }}
+    ]
+  ] 
+},
+  {planet: "Mars",
+  location: "Curiosity",
+  image: "mars.png",
+  data: [
+    [
+      {Temperature: { avg: -69.233, min: -100.067, max: -28.983 }},
+      {Pressure: { avg: 759.016, min: 745.1813, max: 778.3311 }},
+      {WindSpeed: { avg: 4.09, min: 0.134, max: 16.679 }},
+      {WindDirection: { avg: 'NNW', min: null, max: null }},
+      {Dates: { utc: '2023-05-01T04:05:34Z', sol: '1317' }},
+      {Astro: { rise: '04:03.23', set: '21:23.43' }}
+    ],
+    [
+      {Temperature: { avg: -61.233, min: -98.024, max: -29.149 }},
+      {Pressure: { avg: 749.006, min: 732.1498, max: 770.3891 }},
+      {WindSpeed: { avg: 3.35, min: 0.356, max: 17.817 }},
+      {WindDirection: { avg: 'NNW', min: null, max: null }},
+      {Dates: { utc: '2023-05-02T04:05:34Z', sol: '1318' }},
+      {Astro: { rise: '04:03.23', set: '21:23.43' }}
+    ],
+    [
+      {Temperature: { avg: -71.233, min: -101.024, max: -27.149 }},
+      {Pressure: { avg: 761.006, min: 742.1498, max: 780.3891 }},
+      {WindSpeed: { avg: 4.35, min: 0.156, max: 17.617 }},
+      {WindDirection: { avg: 'NNW', min: null, max: null }},
+      {Dates: { utc: '2023-05-03T04:05:34Z', sol: '1319' }},
+      {Astro: { rise: '04:03.23', set: '21:23.43' }}
     ]
   ] 
 },
@@ -3100,36 +3130,276 @@ location: "Edinburgh",
 image: "earth.png",
  data: [
   [
-    {AT: { avg: 11.233, min: -1.024, max: 15.32 }},
-    {PRE: { avg: 861.006, min: 742.1498, max: 1113 }},
-    {WS: { avg: 14.35, min: 10.156, max: 20 }},
-    {WD: { avg: 'SSW', min: 'S', max: 'SW' }},
-    {DATES: { utc: '2019-08-19T08:03:59Z', sol: '1219' }},
-    {SUN: { rise: '04:03.23', set: '21:23.43' }},
-    {HUM: { avg: 25.3, min: 15, max:  25.78 }},
-    {VIS: { avg: 19, min: 13, max: 23 }},
+    {Temperature: { avg: 11.233, min: -1.024, max: 15.32 }},
+    {Pressure: { avg: 861.006, min: 742.1498, max: 1113 }},
+    {WindSpeed: { avg: 14.35, min: 10.156, max: 20 }},
+    {WindDirection: { avg: 'SSW', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 25.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 13, max: 23 }},
     {UV: { avg: 1, min: 1, max: 1 }}
   ],
   [
-    {AT: { avg: -61.233, min: -98.024, max: 0 }},
-    {PRE: { avg: 749.006, min: 732.1498, max: 0 }},
-    {WS: { avg: 3.35, min: 0.356, max: 0 }},
-    {WD: { avg: 'SSW', min: null, max: null }},
-    {DATES: { utc: '2019-08-19T08:03:59Z', sol: '1220' }},
-    {SUN: { rise: '04:03.23', set: '21:23.43' }},
-    {HUM: { avg: 23.3, min: 15, max:  25.78 }},
-    {VIS: { avg: 18, min: 13, max: 23 }},
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
     {UV: { avg: 2, min: 2, max: 2 }} 
   ],
   [
-    {AT: { avg: -69.233, min: -100.067, max: 0 }},
-    {PRE: { avg: 759.016, min: 745.1813, max: 0 }},
-    {WS: { avg: 4.09, min: 0.134, max: 0 }},
-    {WD: { avg: 'SSW', min: null, max: null }},
-    {DATES: { utc: '2019-08-19T08:03:59Z', sol: '1221' }},
-    {SUN: { rise: '04:03.23', set: '21:23.43' }},
-    {HUM: { avg: 28.3, min: 15, max:  25.78 }},
-    {VIS: { avg: 19, min: 18, max: 23 }},
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
+    {UV: { avg: 3, min: 2, max: 4 }}
+  ]
+] 
+},
+
+{planet: "Earth",
+location: "Tokyo",
+image: "earth.png",
+ data: [
+  [
+    {Temperature: { avg: 19.233, min: 23.024, max: 19.32 }},
+    {Pressure: { avg: 1021.006, min: 1002.1498, max: 1131 }},
+    {WindSpeed: { avg: 15.35, min: 12.156, max: 19 }},
+    {WindDirection: { avg: 'S', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 73, min: 65, max:  75 }},
+    {Visibility: { avg: 10, min: 8, max: 13 }},
+    {UV: { avg: 1, min: 1, max: 1 }}
+  ],
+  [
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
+    {UV: { avg: 2, min: 2, max: 2 }} 
+  ],
+  [
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
+    {UV: { avg: 3, min: 2, max: 4 }}
+  ]
+] 
+},
+
+{planet: "Earth",
+location: "Rio",
+image: "earth.png",
+ data: [
+  [
+    {Temperature: { avg: 11.233, min: -1.024, max: 15.32 }},
+    {Pressure: { avg: 861.006, min: 742.1498, max: 1113 }},
+    {WindSpeed: { avg: 14.35, min: 10.156, max: 20 }},
+    {WindDirection: { avg: 'SSW', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 25.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 13, max: 23 }},
+    {UV: { avg: 1, min: 1, max: 1 }}
+  ],
+  [
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
+    {UV: { avg: 2, min: 2, max: 2 }} 
+  ],
+  [
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
+    {UV: { avg: 3, min: 2, max: 4 }}
+  ]
+] 
+},
+
+{planet: "Earth",
+location: "Cape Canaveral",
+image: "earth.png",
+ data: [
+  [
+    {Temperature: { avg: 11.233, min: -1.024, max: 15.32 }},
+    {Pressure: { avg: 861.006, min: 742.1498, max: 1113 }},
+    {WindSpeed: { avg: 14.35, min: 10.156, max: 20 }},
+    {WindDirection: { avg: 'SSW', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 25.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 13, max: 23 }},
+    {UV: { avg: 1, min: 1, max: 1 }}
+  ],
+  [
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
+    {UV: { avg: 2, min: 2, max: 2 }} 
+  ],
+  [
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
+    {UV: { avg: 3, min: 2, max: 4 }}
+  ]
+] 
+},
+
+{planet: "Earth",
+location: "CapeTown",
+image: "earth.png",
+ data: [
+  [
+    {Temperature: { avg: 11.233, min: -1.024, max: 15.32 }},
+    {Pressure: { avg: 861.006, min: 742.1498, max: 1113 }},
+    {WindSpeed: { avg: 14.35, min: 10.156, max: 20 }},
+    {WindDirection: { avg: 'SSW', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 25.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 13, max: 23 }},
+    {UV: { avg: 1, min: 1, max: 1 }}
+  ],
+  [
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
+    {UV: { avg: 2, min: 2, max: 2 }} 
+  ],
+  [
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
+    {UV: { avg: 3, min: 2, max: 4 }}
+  ]
+] 
+},
+
+{planet: "Earth",
+location: "Mumbai",
+image: "earth.png",
+ data: [
+  [
+    {Temperature: { avg: 11.233, min: -1.024, max: 15.32 }},
+    {Pressure: { avg: 861.006, min: 742.1498, max: 1113 }},
+    {WindSpeed: { avg: 14.35, min: 10.156, max: 20 }},
+    {WindDirection: { avg: 'SSW', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 25.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 13, max: 23 }},
+    {UV: { avg: 1, min: 1, max: 1 }}
+  ],
+  [
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
+    {UV: { avg: 2, min: 2, max: 2 }} 
+  ],
+  [
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
+    {UV: { avg: 3, min: 2, max: 4 }}
+  ]
+] 
+},
+
+{planet: "Earth",
+location: "Melbourne",
+image: "earth.png",
+ data: [
+  [
+    {Temperature: { avg: 11.233, min: -1.024, max: 15.32 }},
+    {Pressure: { avg: 861.006, min: 742.1498, max: 1113 }},
+    {WindSpeed: { avg: 14.35, min: 10.156, max: 20 }},
+    {WindDirection: { avg: 'SSW', min: 'S', max: 'SW' }},
+    {Dates: { utc: '2023-05-01T08:03:59Z', sol: '230501' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 25.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 13, max: 23 }},
+    {UV: { avg: 1, min: 1, max: 1 }}
+  ],
+  [
+    {Temperature: { avg: -61.233, min: -98.024, max: 0 }},
+    {Pressure: { avg: 749.006, min: 732.1498, max: 0 }},
+    {WindSpeed: { avg: 3.35, min: 0.356, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230502' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 23.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 18, min: 13, max: 23 }},
+    {UV: { avg: 2, min: 2, max: 2 }} 
+  ],
+  [
+    {Temperature: { avg: -69.233, min: -100.067, max: 0 }},
+    {Pressure: { avg: 759.016, min: 745.1813, max: 0 }},
+    {WindSpeed: { avg: 4.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'SSW', min: null, max: null }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { rise: '04:03.23', set: '21:23.43' }},
+    {Humidity: { avg: 28.3, min: 15, max:  25.78 }},
+    {Visibility: { avg: 19, min: 18, max: 23 }},
     {UV: { avg: 3, min: 2, max: 4 }}
   ]
 ] 

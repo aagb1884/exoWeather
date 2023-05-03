@@ -1,20 +1,47 @@
 const ObjectId = require('mongodb').ObjectId;
-const transformData = function (marsCollection, earthCollection, combined) {
+const transformData = function (marsCollection, earthCollection, combined, transformed) {
 
-  // const date = new Date();
+  require('dotenv').config();
 
-  // const day = date.getDate();
-  // const month = date.getMonth() + 1;
-  // const year = date.getFullYear();
-  // const earthDate = year && '-' &&
+  const apiKey = process.env.API_KEY
 
-  combined.deleteMany({"planet": "Mars"})
-  combined.deleteMany({"planet": "Earth"})
+  const earthLocations = ["Edinburgh", "Tokyo", "Rio", "Cape-canaveral", "Cape-town", "mumbai", "melbourne"]
+  
+  // const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=no&hour=6`
+  
+  const fetchEarth = function(apiCity){
+    console.log(`apiCity: ${apiCity}`)
+    // const request = fetch("http://api.weatherapi.com/v1/forecast.json?key={apiKey}&q={apiCity}&days=3&aqi=no&alerts=no")
+    // .then(res => res.json())
+    // .then(data => console.log(`put out data: ${Object.values(data)}`))
+    // .then(data => setEarthWeather(data))
+    
+  }
+
+  const getEarthLocations = (earthLocation) => {
+    console.log(`call to fetchEarth with ${earthLocation}`)
+    console.log(`just earthLoc ${earthLocation}`)
+    return fetchEarth(earthLocation)
+    //  return fetchEarth(earthLocations[1])  
+  }
+
+  console.log(`api result: ${getEarthLocations(earthLocations)}`)
+  
+  setEarthWeather = function(document){
+    console.log(`setEarthWeather: ${document}`)
+    // earthCollection.insertOne(document)
+  }
+
+  transformed.deleteMany({"planet": "Mars"})
+  transformed.deleteMany({"planet": "Earth"})
+  
+  
+  
   const newMarsObject =  marsCollection
     .find()
     .toArray()
     .then(data => {
-      console.log(data[0])
+      // console.log(data[0])
       const {
         _id,
         sol_keys,
@@ -60,7 +87,7 @@ const transformData = function (marsCollection, earthCollection, combined) {
     res.json({ status: 500, error: err });
   })
   .then(data => {
-    console.log(data)
+    // console.log(data)
     return {
       planet: "Mars",
       location: "Insight",
@@ -68,8 +95,8 @@ const transformData = function (marsCollection, earthCollection, combined) {
       data}
   })
   .then(fullObj => {
-    console.log(`mars: ${fullObj}`)
-    combined
+    // console.log(`mars: ${fullObj}`)
+    transformed
     .insertOne(fullObj)
   })
 
@@ -137,7 +164,7 @@ const transformData = function (marsCollection, earthCollection, combined) {
     res.json({ status: 500, error: err });
     })
     .then(data => {
-      console.log(data)
+      // console.log(data)
       return {
         planet: "Earth",
         location: "Edinburgh",
@@ -175,13 +202,13 @@ const transformData = function (marsCollection, earthCollection, combined) {
                   //   }) = data
                 })
   .then(fullObj => {
-    console.log(`earth: ${fullObj}`)
-    combined
+    // console.log(`earth: ${fullObj}`)
+    transformed
       .insertOne(fullObj)
   })             
 
   // console.log(`Full: ${fullArray}`)
-  //   combined
+  //   transformed
   //     .insertOne(newEarthObject)
 }
 

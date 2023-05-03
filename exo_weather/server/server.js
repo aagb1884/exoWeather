@@ -15,8 +15,9 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const db = client.db('exoWeather');
     const marsCollection = db.collection('mars');
     const earthCollection = db.collection('earth');
+    const transformed = db.collection('transformed');
     const combined = db.collection('combined');
-    transformData(marsCollection, earthCollection, combined)
+    transformData(marsCollection, earthCollection, combined, transformed)
     const planetRouter = createRouter(combined);
     app.use('/api/planets', planetRouter);
   })

@@ -12,7 +12,6 @@ const UniquePlanet = ({planet}) => {
     // const planetPath = "./mars.png"
     return ( 
         <>
-        <h2>Unique Planet</h2>
         {/* <PlanetImage imageUrl={planetPath}/> */}
         <PlanetImage imageUrl={require("../images/" + planet.image)} planetName={planet.planet} />
         <SummaryInfo planet={{...planet}}/>

@@ -11,7 +11,6 @@ const SummaryInfo = ({_id, planet, location, data}) => {
   
   return ( 
       <>
-      <h3>Summary Info</h3>
       {widgetInfo}
       </>
    );

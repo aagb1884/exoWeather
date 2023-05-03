@@ -30,7 +30,6 @@ const PlanetBox = () => {
 
     return ( 
         <div classname="planet-box">
-         <h2>Planet Box</h2>
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
          { selectedPlanet ? <UniquePlanet planet={selectedPlanet}/> : null }
          <br />

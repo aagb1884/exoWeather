@@ -16,7 +16,7 @@ const PlanetSelect = ({planets, onPlanetSelect}) => {
 
     return ( 
             <select defaultValue="" onChange={handleChange}>
-                <option value="">Choose Planet</option>
+                <option value="">Choose Location</option>
                 {planetOptions}
             </select> 
             )

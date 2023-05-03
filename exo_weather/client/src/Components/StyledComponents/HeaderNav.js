@@ -36,7 +36,7 @@ const Header = styled.header`
   background-image: url("./images/starbackground.jpeg");
   color: #f8ab07;
   border: solid 2.5px;
-  border-radius: 100px;
+  border-radius: 100px
 `;
 
 

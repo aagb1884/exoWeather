@@ -21,10 +21,10 @@ const Container = () => {
   //   return <PlanetBox key={index} planet={planet} planets={planets}/>
   // })
     return ( 
-      <>
+      <Wrapper>
         <PlanetBox key={0} />
         <PlanetBox key={1} />
-      </>
+      </Wrapper>
      );
 }
 

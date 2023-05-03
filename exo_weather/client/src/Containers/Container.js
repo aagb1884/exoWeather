@@ -5,26 +5,25 @@ import styled from 'styled-components';
 
 
 const Container = () => {
-  const [planets, setPlanets] = useState([]);
+//   const [planets, setPlanets] = useState([]);
 
-  useEffect(() => {
-    getPlanets();
-  }, [])
+//   useEffect(() => {
+//     getPlanets();
+//   }, [])
 
-  const getPlanets = function(){
-    fetch('http://localhost:9000/api/planets/')
-    .then(res => res.json())
-    .then(planets => setPlanets(planets))
-}
+//   const getPlanets = function(){
+//     fetch('http://localhost:9000/api/planets/')
+//     .then(res => res.json())
+//     .then(planets => setPlanets(planets))
+// }
 
-  const planetBoxes = planets.map((planet, index, planets) => {
-    return <PlanetBox key={index} planet={planet} planets={planets}/>
-  })
+  // const planetBoxes = planets.map((planet, index, planets) => {
+  //   return <PlanetBox key={index} planet={planet} planets={planets}/>
+  // })
     return ( 
       <>
-      <Wrapper>
-        {planetBoxes}
-      </Wrapper>
+        <PlanetBox key={0} />
+        <PlanetBox key={1} />
       </>
      );
 }

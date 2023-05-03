@@ -18,9 +18,9 @@ const HeaderNav = () => {
           <NavButton onClick={toggleMenu}>
             <Hamburger toggled={isOpen} toggle={toggleMenu} />
             <DropdownList isOpen={isOpen}>
-              <DropdownItem><DropdownLink href="/">Home</DropdownLink></DropdownItem>
-              <DropdownItem><DropdownLink href="/planets">Compare Planets</DropdownLink></DropdownItem>
-              <DropdownItem><DropdownLink href="/about">About</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink to="/">Home</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink to="/planets">Weather</DropdownLink></DropdownItem>
+              <DropdownItem><DropdownLink to="/about">About</DropdownLink></DropdownItem>
             </DropdownList>
           </NavButton>
         </NavItem>
@@ -73,7 +73,7 @@ const NavButton = styled.button`
 const DropdownList = styled.ul`
   position: absolute;
   top: 100%;
-  right: 0; /* use right instead of left */
+  right: 0; 
   display: none;
   list-style: none;
   padding: 10px;
@@ -103,7 +103,7 @@ const DropdownItem = styled.li`
   margin: 0;
 `;
 
-const DropdownLink = styled.a`
+const DropdownLink = styled(Link)`
   display: block;
   padding: 10px;
   color: white;

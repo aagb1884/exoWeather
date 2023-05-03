@@ -71,7 +71,7 @@ db.mars.insertOne(
     "1221": {"AT": { "av": -69.233, "ct": 326642, "mn": -100.067, "mx": -28.983 }, 
     "HWS": { "av": 4.09, "ct": 154291, "mn": 0.134, "mx": 16.679 },
     "PRE": { "av": 759.016, "ct": 163013, "mn": 745.1813, "mx": 778.3311 }, 
-    "WD": {
+    "WD": {   if {planet.planet} === planetName && {planet.location} === 
       "most_common": { "compass_degrees": 202.5, "compass_point": "SSW", 
               "compass_right": -0.382683432365, "compass_up": -0.923879532511, "ct": 28551 }, 
     },

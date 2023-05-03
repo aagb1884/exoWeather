@@ -11,7 +11,7 @@ const PlanetSelect = ({planets, onPlanetSelect}) => {
     }
 
     const planetOptions = planets.map((planet, index) => {
-        return <option key={index} value={planet.planet}>{planet.planet}</option>
+        return <option key={index} value={planet.planet}>{planet.planet} - {planet.location}</option>
     })
 
     return ( 

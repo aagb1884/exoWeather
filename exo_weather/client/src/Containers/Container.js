@@ -1,5 +1,7 @@
 import PlanetBox from "../Containers/PlanetBox";
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
 
 
 const Container = () => {
@@ -25,5 +27,17 @@ const Container = () => {
       </>
      );
 }
+
+const Wrapper = styled.div`
+display: flex;
+align-items: flex-start;
+flex-wrap: wrap;
+justify-content: space-between;
+
+> * {
+    flex: 1;
+
+  };
+`
  
 export default Container;

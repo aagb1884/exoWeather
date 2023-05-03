@@ -3,7 +3,7 @@ const PlanetPage = () => {
 
 
     return ( 
-        <div classname="planet-page">
+        <div className="planet-page">
 
         <h2></h2>
             <ul>

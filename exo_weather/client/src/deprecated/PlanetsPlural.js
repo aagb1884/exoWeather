@@ -1,7 +1,7 @@
 const PlanetsPlural = () => {
 
     return ( 
-        <div classname="planets-plural-list">
+        <div className="planets-plural-list">
         <h1>Planets Available:</h1>
         <ul>
             <li>image of planet</li>

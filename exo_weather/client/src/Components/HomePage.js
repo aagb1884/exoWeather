@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 import GetStartedButton from './StyledComponents/GetStartedButton';
-import StyledDropDown from './StyledComponents/StyledDropDown';
 const HomePage = () => {
   return (
     <HomePageWrapper>

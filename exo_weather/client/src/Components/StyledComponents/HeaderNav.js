@@ -1,23 +1,20 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
-import { useState } from 'react';
-import Hamburger from 'hamburger-react'
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+// import { faEarth } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  }
 
   return (
     <Header>
-      <Title>exoWeather</Title>
+      <Title to="/">exoWeather</Title>
       <Nav>
         <NavItem>
-          <NavButton onClick={toggleMenu}>
-            <Hamburger toggled={isOpen} toggle={toggleMenu} />
-            <DropdownList isOpen={isOpen}>
+          <NavButton>
+            {/* <FontAwesomeIcon icon={faEarth} style={{color: "#ffffff"}} size="2x" /> */}
+            <FontAwesomeIcon icon={faBars} style={{color: "#ffffff",}} size="2x" />
+            <DropdownList>
               <DropdownItem><DropdownLink to="/">Home</DropdownLink></DropdownItem>
               <DropdownItem><DropdownLink to="/planets">Weather</DropdownLink></DropdownItem>
               <DropdownItem><DropdownLink to="/about">About</DropdownLink></DropdownItem>
@@ -27,7 +24,7 @@ const HeaderNav = () => {
       </Nav>
     </Header>
   );
-}
+};
 
 const Header = styled.header`
   display: flex;
@@ -39,8 +36,7 @@ const Header = styled.header`
   border-radius: 100px
 `;
 
-
-const Title = styled.h1`
+const Title = styled(Link)`
   font-size: 40px;
   margin: 0;
   text-align: center;
@@ -49,6 +45,7 @@ const Title = styled.h1`
   font-family: 'aquire-font', sans-serif;
   color: white;
   flex: auto;
+  text-decoration: none;
 `;
 
 const Nav = styled.nav`
@@ -65,51 +62,42 @@ const NavButton = styled.button`
   color: white;
   background-color: transparent;
   border: none;
-  cursor: pointer;
   font-size: 25px;
-  font-family: 'aquire-font', sans-serif;
+  font-family: 'aquire-font', sans-serif;  
 `;
 
 const DropdownList = styled.ul`
   position: absolute;
   top: 100%;
-  right: 0; 
-  display: none;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
   list-style: none;
   padding: 10px;
   margin: 0;
-  background-color: #f8ab07;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out, visibility 0.3s ease-in-out;
   ${NavButton}:hover & {
-    display: block;
-  }
-
-  @media (max-width: 768px) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
-    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
   }
 `;
 
-
 const DropdownItem = styled.li`
   margin: 0;
+  padding: 10px;
 `;
 
 const DropdownLink = styled(Link)`
   display: block;
-  padding: 10px;
+  padding: 15px;
   color: white;
   text-decoration: none;
   font-size: 20px;
   justify-content: center;
+  border: solid 2px;
+  border-radius: 100px;
+  background-color: #f8ab07;
 `;
 
 export default HeaderNav;

@@ -1,20 +1,39 @@
 import styled from 'styled-components'
 
 const StyledWidget = ({info}) => {
+
+  const keyLabels = Object.keys(info)
+  const spread = Object.values(info)
 // const StyledWidget = ({avg, min, max}) => {
-  console.log(`Widget: ${Object.keys(info)}`)
-  const keyLabel = Object.keys(info)
+  // console.log(`Widget1: ${Object.keys(info)}`)
+  // console.log(`Widget2: ${typeof keyLabel[0]}`)
+  console.log(`Widget3: ${clientInformation}`)
+  // // console.log(`Widget4: ${info.avg}`)
+  // console.log(`Widget5: ${spread[1]}`)
+  // console.log(`Widget5: ${spread}`)
+
+const widgetItems = spread.map((key) => {
+   for (let valueKey in key){
+    return <StyledWidgetWeatherData>~{valueKey} - {key[valueKey]}</StyledWidgetWeatherData>
+  }
+})
+
+// for (let key of spread){
+//     for (let valueKey in key){
+//       console.log(key[valueKey])
+//     }
+// }
 
   return (
 
     <>
       <StyledWidgetWrapper>
         <StyledWidgetWeatherType >
-        {keyLabel}
+        {keyLabels[0]}: 
         </StyledWidgetWeatherType>
-          <StyledWidgetWeatherData>
-          {info.avg}
-          </StyledWidgetWeatherData>
+
+          {widgetItems}
+          
       </StyledWidgetWrapper>
     </>
   )

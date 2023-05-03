@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 const GetStartedButton = () => {
   return (
     <ButtonWrapper>
-      <ButtonLink href="/planets">Get Started...</ButtonLink>
+      <ButtonLink to="/planets">Get Started...</ButtonLink>
     </ButtonWrapper>
   );
 };
@@ -16,14 +17,14 @@ const ButtonWrapper = styled.div`
   width: 50vh;
 `;
 
-const ButtonLink = styled.a`
+const ButtonLink = styled(Link)`
   padding: 1rem 2rem;
   background-color: transparent;
   color: white;
   text-decoration: none;
   justify-content: center;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 100px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.6s ease-in-out;

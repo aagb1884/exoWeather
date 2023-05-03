@@ -1,4 +1,5 @@
 import StyledWidget from "../StyledComponents/StyledWidget";
+import styled from "styled-components";
 
 const SummaryInfo = ({_id, planet, location, data}) => {
   
@@ -11,10 +12,22 @@ const SummaryInfo = ({_id, planet, location, data}) => {
   console.log(widgetInfo)
 
   return ( 
-      <>
+      <WidgetWrapper>
       {widgetInfo}
-      </>
+      </WidgetWrapper>
    );
 }
 
+const WidgetWrapper = styled.div`
+display: flex;
+align-items: flex-start;
+flex-wrap: wrap;
+justify-content: space-around;
+padding-top: 5px;
+
+> * {
+    flex: 1;
+
+  };
+`
 export default SummaryInfo;

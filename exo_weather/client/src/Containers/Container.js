@@ -33,6 +33,9 @@ display: flex;
 align-items: flex-start;
 flex-wrap: wrap;
 justify-content: space-between;
+padding-top: 15px;
+padding-left: 1%;
+padding-right: 1%;
 
 > * {
     flex: 1;

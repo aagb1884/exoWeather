@@ -12,8 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <HeaderNav/>
+       
        <Router>
+          <HeaderNav/>
           <Routes>
             <Route path="/" element={< HomePage />}/>
             <Route path="/planets" element={< Container />}/> 

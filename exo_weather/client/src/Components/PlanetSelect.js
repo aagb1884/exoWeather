@@ -1,8 +1,8 @@
 const PlanetSelect = ({planets, onPlanetSelect}) => {
 
     const handleChange = function(event) {
-        const chosenPlanetName = event.target.value;
-        { event.target.value == "" ? doNowt() : onPlanetSelect(chosenPlanetName)}
+        const chosenPlanetLocation = event.target.value;
+        { event.target.value == "" ? doNowt() : onPlanetSelect(chosenPlanetLocation)}
         // onPlanetSelect(chosenPlanetName)
     }
 
@@ -11,12 +11,12 @@ const PlanetSelect = ({planets, onPlanetSelect}) => {
     }
 
     const planetOptions = planets.map((planet, index) => {
-        return <option key={index} value={planet.planet}>{planet.planet} - {planet.location}</option>
+        return <option key={index} value={planet.location}>{planet.planet} - {planet.location}</option>
     })
 
     return ( 
             <select defaultValue="" onChange={handleChange}>
-                <option value="">Choose Planet</option>
+                <option value="">Choose Location</option>
                 {planetOptions}
             </select> 
             )

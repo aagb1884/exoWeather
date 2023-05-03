@@ -1,9 +1,10 @@
+<<<<<<< HEAD
 import styled, { keyframes } from 'styled-components';
 
-const PlanetImage = ({imageUrl, planetName}) => {
+const PlanetImage = ({imageUrl, planetName, location}) => {
   return (
     <ImageWrapper>
-      <h3>{planetName}</h3>
+      <h3>{planetName}: {location}</h3>
       <RotateImage src={imageUrl} alt="image of planet" width="512" height="512" />
     </ImageWrapper>
   );
@@ -29,3 +30,15 @@ const RotateImage = styled.img`
 `;
 
 export default PlanetImage;
+=======
+const PlanetImage = ({imageUrl, planetName, location}) => {
+    return ( 
+        <>
+          <h3>{planetName}: {location}</h3>
+          <img src={imageUrl} alt="image of planet" width="512" height="512"/>
+        </>
+     );
+}
+ 
+export default PlanetImage;
+>>>>>>> main

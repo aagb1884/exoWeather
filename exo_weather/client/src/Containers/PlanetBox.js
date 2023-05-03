@@ -18,9 +18,9 @@ const PlanetBox = () => {
         .then(planets => setPlanets(planets))
     }
 
-    const onPlanetSelect = function(planetName) {
-        const foundPlanet = planets.find((planet) => planet.planet === planetName )
-        setSelectedPlanet(foundPlanet)
+    const onPlanetSelect = function(planetLocation) {
+        const foundLocation = planets.find((planet) => planet.location === planetLocation )
+        setSelectedPlanet(foundLocation)
     }
 
     // const onPlanetSelect2 = function(planetName) {
@@ -30,7 +30,6 @@ const PlanetBox = () => {
 
     return ( 
         <div classname="planet-box">
-         <h2>Planet Box</h2>
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
          { selectedPlanet ? <UniquePlanet planet={selectedPlanet}/> : null }
          <br />

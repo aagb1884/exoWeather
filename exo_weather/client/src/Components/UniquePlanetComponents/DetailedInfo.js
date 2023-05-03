@@ -1,7 +1,7 @@
 const DetailedInfo = () => {
   return ( 
       <>
-      <h3>Detailed Info</h3>
+      
       </>
    );
 }

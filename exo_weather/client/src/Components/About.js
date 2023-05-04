@@ -40,6 +40,7 @@ const CenteredDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: yellow;
   min-height: 100vh;
   font-size: 20px;
 

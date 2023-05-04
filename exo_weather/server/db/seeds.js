@@ -570,5 +570,36 @@ image: "proximacentaurib.png",
     {Astro: { sunrise: '03:43 AM', sunset: '18:31 PM' }}
   ]
 ] 
+},
+
+{planet: "Death Star",
+location: "Thats No Moon...",
+image: "deathstar.png",
+ data: [
+  [
+    {Temperature: { avg: 21.2, min: 17.3, max: 24.9 }},
+    {WindSpeed: { avg: 0, min: 0, max: 0 }},
+    {WindDirection: { avg: 'n/a', min: 'n/a', max: 'n/a' }},
+    {Dates: { utc: '2023-05-03T08:03:59Z', sol: '230503' }},
+    {Astro: { sunrise: '03:47 AM', sunset: '21:30 PM' }},
+    {Humidity: { avg: 55, min: 50, max:  95.8 }},
+  ],
+  [
+    {Temperature: { avg: 25.7, min: 18.3, max: 26.8 }},
+    {WindSpeed: { avg: 33.35, min: 30.3, max: 40.7 }},
+    {WindDirection: { avg: 'NE', min: null, max: null }},
+    {Dates: { utc: '2023-05-04T08:03:59Z', sol: '230504' }},
+    {Astro: { sunrise: '03:45 AM', sunset: '21:30 PM' }},
+    {Humidity: { avg: 56, min: 50, max:  95.8 }},
+  ],
+  [
+    {Temperature: { avg: 24.5, min: 20.0, max: 30.7 }},
+    {WindSpeed: { avg: 34.09, min: 0.134, max: 0 }},
+    {WindDirection: { avg: 'ENE', min: 'W', max: 'SW' }},
+    {Dates: { utc: '2023-05-05T08:03:59Z', sol: '230505' }},
+    {Astro: { sunrise: '03:43 AM', sunset: '18:31 PM' }},
+    {Humidity: { avg: 52, min: 50, max:  95.8 }},
+  ]
+  ]
 }
 ]);

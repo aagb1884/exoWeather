@@ -63,7 +63,8 @@ const NavButton = styled.button`
   background-color: transparent;
   border: none;
   font-size: 25px;
-  font-family: 'aquire-font', sans-serif;  
+  font-family: 'aquire-font', sans-serif; 
+  margin-right: 25px;
 `;
 
 const DropdownList = styled.ul`

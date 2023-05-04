@@ -2,6 +2,8 @@ import PlanetPage from "../Components/PlanetPage";
 import PlanetSelect from "../Components/PlanetSelect";
 import UniquePlanet from "../Components/UniquePlanet";
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+
 
 const PlanetBox = () => {
     const [planets, setPlanets] = useState([]);
@@ -29,6 +31,7 @@ const PlanetBox = () => {
     // }
 
     return ( 
+        <StyledPlanetBox>
         <div className="planet-box">
          <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect} />
          { selectedPlanet ? <UniquePlanet planet={selectedPlanet}/> : null }
@@ -36,8 +39,14 @@ const PlanetBox = () => {
          {/* <PlanetSelect planets={planets} onPlanetSelect={onPlanetSelect2} />
          { selectedPlanet2 ? <UniquePlanet planet={selectedPlanet2}/> : null} */}
         </div>
+        </StyledPlanetBox>
+
 
      );
 }
- 
+
+    const StyledPlanetBox = styled.div`
+    padding: 25px;
+    `;
+    
 export default PlanetBox;

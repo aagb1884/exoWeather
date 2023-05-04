@@ -16,7 +16,7 @@ const UniquePlanet = ({planet}) => {
         <PlanetImage imageUrl={require("../images/" + planet.image)} planetName={planet.planet} location={planet.location} />
         <SummaryInfo planet={{...planet}}/>
         {/* <LocationSelect /> */}
-        <DetailedInfo />
+        {/* <DetailedInfo /> */}
         </>
      );
 }

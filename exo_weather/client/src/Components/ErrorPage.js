@@ -1,6 +1,6 @@
 const ErrorPage = () => {
     return ( 
-        <h1>Error Page, you're on the wrong planet.</h1>
+        <h1>Error - Woah there...you're on the wrong planet...</h1>
      );
 }
  

@@ -22,6 +22,7 @@ const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px;
 `;
 
 const RotateImage = styled.img`

@@ -12,22 +12,22 @@ const SummaryInfo = ({_id, planet, location, data}) => {
   console.log(widgetInfo)
 
   return ( 
-      <WidgetWrapper>
-      {widgetInfo}
-      </WidgetWrapper>
+          <WidgetWrapper>
+            {widgetInfo}
+          </WidgetWrapper>
    );
 }
 
 const WidgetWrapper = styled.div`
-display: flex;
-align-items: flex-start;
-flex-wrap: wrap;
-justify-content: space-around;
-padding-top: 5px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 25px;
+  overflow-x: auto;
+  border: solid 3px;
+  border-radius: 100px;
+  color: #f8ab07;
+`;
 
-> * {
-    flex: 1;
-
-  };
-`
 export default SummaryInfo;

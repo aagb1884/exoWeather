@@ -18,9 +18,7 @@ const widgetItems = spread.map((key) => {
         <StyledWidgetWeatherType >
         {keyLabels[0]}: 
         </StyledWidgetWeatherType>
-
           {widgetItems}
-          
       </StyledWidgetWrapper>
     </>
   )
@@ -30,23 +28,20 @@ const StyledWidgetWrapper = styled.div`
     min-width: 250px;
     max-width: 250px;
     background-color: transparent;
-    border: 2px solid #f8ab07;
-    border-width: 5px;
-    border-radius: 5%;
-    padding: 1rem;
-    margin: 5px;
+    border: 3px solid #f8ab07;
+    border-radius: 100px;
+    padding: 5px;
+    margin: 10px;
    	text-align: center;
 `
 
 const StyledWidgetWeatherType = styled.h2`
-    font: robotto;
     font-size: 25px;
     color: white;
 `
 
 const StyledWidgetWeatherData = styled.h3`
-font: robotto;
-    font-size: 18px;
+    font-size: 25px;
     color: white;
 `
 export default StyledWidget;

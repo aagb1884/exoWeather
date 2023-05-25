@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# exoWeather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A week-long JavaScript group project as part of our CodeClan course.
 
-## Available Scripts
+##Project Brief
 
-In the project directory, you can run:
+We will create a weather app that allows users to search for the weather in a specific location on a specific planet (or plausibly moon-ish object).
 
-### `npm start`
+We will uses an API such as [OpenWeatherMap](https://openweathermap.org/api), [WeatherAPI](https://www.weatherapi.com/), or [Meteomatics](https://www.meteomatics.com/en/weather-api/) to retrieve the current weather and forecast information for Earth, and a NASA API to retrieve the weather for Mars.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###MVP
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A user should be able to:
 
-### `npm test`
+- See both planets side by side.
+- Choose a planet and display more detailed information on that planet’s weather.
+- See the data in a unique, accessible and user-friendly way.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###Extensions
+- Search for weather in a specific location on a specific planet (if the data allows it).
+- Select altnerate theme(s) and order of planets.
+- Get clothing recommendations based on the weather.
+- Select different planets to view non-weather data about them.
+- User can save their favourite planets/themes/layouts.
 
-### `npm run build`
+##What actually happened
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We achieved MVP, but faced a few obstacles along the way:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The NASA API for Mars weather is not being updated as the Mars Rovers attempt to conserve power. As a result we had to use historic weather data for Mars rather than a forecast.
+- The historic data for Mars had different keys to the Earth weather data (we used WeatherAPI for this), and so we had to:
+	- Fetch the Earth weather forecast
+	- Transform it and the Mars data so they had consistent keys.
+	- Use it to create our own database which would then be the source of data for the Front 	End.
+- The entire group had existing commitments during the week of the project meaning this was essentially a 4 day project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##How it works
 
-### `npm run eject`
+- From the home page you can either click on ‘Get Started’ or use the burger menu in the top right of the screen and select ‘Weather’ (NB. You can also click on ‘About’ if you want to read more about the project).
+- From the first dropdown menu, select a location to get weather information from.
+- From the second dropdown menu, select a location to get weather information from.
+- You now have two locations with their accompanying weather data, and can change your selection to see other planets/locations.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Dev Instructions
+### first time/initial setup
+1. `Git clone` into the directory of your choice
+2. make sure you do an `npm install` in each of the `server` and `client` directory
+3. in the server directory, make sure you do the following:
+  >npm install express 
+  >
+  >npm install mongodb 
+  >
+  >npm install cors
+  >
+  >npm install --save-dev nodemon
+4. you should then be able to run both the server and the client in separate tabs on the terminal:
+  >npm run server:dev
+  >
+  >npm start
